@@ -1,0 +1,203 @@
+.header {
+    @include flex-center;
+    position: relative;
+    min-height: 6.3rem;
+    &__icon {
+        position: absolute;
+        left: 3rem;
+        font-size: 2rem;
+        transition: .2s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &__logo img {
+        height: 3rem;
+    }
+}
+
+.main-container {
+    background-color: $color-backgound;
+    &__header img {
+        margin-bottom: 3rem;
+    }
+    @include largest {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "header header header" "menu-entre menu-dishes menu-dessert" ". button .";
+        .main__header {
+            grid-area: header;
+        }
+        .menu:nth-child(2) {
+            grid-area: menu-entre;
+        }
+        .menu:nth-child(3) {
+            grid-area: menu-dishes;
+        }
+        .menu:nth-child(4) {
+            grid-area: menu-dessert;
+        }
+        .order-button {
+            grid-area: button;
+        }
+    }
+}
+
+.main__header {
+    @include flex-column-center;
+    position: relative;
+    background-color: $color-backgound;
+    overflow: auto;
+    img {
+        height: 28rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    .shadow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 2px -1px 10px 0px $shadow-dark;
+        top: 0;
+        left: 0;
+    }
+    .main__title {
+        @include flex-center;
+        justify-content: space-between;
+        font-family: 'Shrikhand', sans-serif;
+        font-size: 1.4rem;
+        padding: 2.5rem 0 1.6rem 2.2rem;
+        border-radius: 2.5rem 2.5rem 0 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: $color-backgound;
+        .heart-icon {
+            margin-right: 1.5rem;
+        }
+    }
+    @include tablet {
+        p {
+            height: 32rem;
+        }
+        img {
+            height: 29rem;
+            margin-bottom: 4rem;
+        }
+        .main__title {
+            justify-content: space-between;
+            .heart-icon {
+                margin-left: 4rem;
+            }
+        }
+    }
+}
+
+.menu {
+    padding: 1.6rem;
+    background-color: $color-backgound;
+    h2 {
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: $color-backgound-footer;
+        margin-bottom: .5rem;
+        padding-left: .6rem;
+    }
+    .underline {
+        width: 4rem;
+        height: .3rem;
+        margin-left: .7rem;
+        background-color: $color-third;
+    }
+    @include laptop {
+        padding: 6rem 1.6rem;
+    }
+}
+
+.card-menu {
+    @include apparition;
+    margin: 1.6rem 0;
+    padding: 1rem;
+    background-color: $color-white;
+    border-radius: 1.5rem;
+    box-shadow: 2px 2px 6px #a1a1a1;
+    ;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    &__title {
+        width: 100%;
+        margin-bottom: .8rem;
+        h3 {
+            font-weight: bold;
+        }
+    }
+    &__content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        font-size: 1.4rem;
+        color: $color-backgound-footer;
+    }
+    &__price {
+        width: auto;
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: $color-backgound-footer;
+        padding: 0 1.5rem;
+        transition: 0.5s ease-in-out;
+    }
+    h3,
+    p {
+        @include truncate;
+        width: 100%;
+        transition: 0.5s ease-in-out;
+    }
+    &__select {
+        width: 0px;
+        height: 7rem;
+        background: $color-third;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: 0.7s ease;
+    }
+    &:hover {
+        box-shadow: 2px 2px 12px #a1a1a1;
+    }
+    &:hover &__select {
+        width: 5.5rem;
+    }
+    &:hover p,
+    &:hover h3 {
+        width: calc(100% - 11rem);
+    }
+    &:hover &__price {
+        transform: translate(-5.5rem);
+    }
+    &__select .fa-check-circle {
+        font-size: 2rem;
+        color: $color-white;
+    }
+}
+
+.order-button {
+    height: 12rem;
+    margin-bottom: 2rem;
+    position: relative;
+    background: $color-backgound;
+    .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 18rem;
+    }
+}

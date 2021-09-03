@@ -1,0 +1,217 @@
+.container {
+    width: 100%;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.presentation {
+    @include flex-column-center;
+    text-align: center;
+    flex-wrap: wrap;
+    background: $color-backgound;
+    min-height: 33.6rem;
+    p {
+        font-size: 2rem;
+        color: $color-backgound-footer;
+    }
+}
+
+.presentation__location {
+    @include flex-center;
+    min-height: 5rem;
+    width: 100%;
+    background: $color-gray-mid;
+    font-weight: bold;
+    box-shadow: inset 0 2px 3px $shadow-light;
+    .icon-position {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 1.6rem;
+        padding-left: 2rem;
+    }
+}
+
+.presentation__content {
+    @include flex-column-center;
+    min-height: 28rem;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+    padding: 0 1.4rem;
+    h2 {
+        width: 80%;
+        font-weight: bold;
+    }
+}
+
+.steps {
+    height: 44rem;
+    padding: 4rem 2.5rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    h2 {
+        font-weight: bold;
+    }
+    @include tablet {
+        padding: 2rem;
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+    @include large {
+        height: 20rem;
+        flex-wrap: nowrap;
+        h2 {
+            margin-bottom: 6rem;
+        }
+    }
+}
+
+.steps__list {
+    flex: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-content: center;
+    @include large {
+        flex-flow: row nowrap;
+    }
+}
+
+.steps__list__button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    font-size: 16px;
+    border-radius: 2.5rem;
+    background: $color-backgound;
+    box-shadow: 2px 3px 10px 1px rgba(230, 227, 227, 0.81);
+    position: relative;
+    p {
+        padding-left: 2rem;
+    }
+    i {
+        padding-left: 3.5rem;
+    }
+    @include tablet {
+        width: 60%;
+        justify-content: flex-start;
+        p {
+            padding-left: 4rem;
+        }
+    }
+    @include laptop {
+        i {
+            padding-left: 6rem;
+            padding-right: 4rem;
+        }
+        p {
+            padding-right: 6rem;
+        }
+    }
+    @include large {
+        width: 25%;
+    }
+    @include desktop {
+        width: 29%;
+    }
+    &:nth-child(3) {
+        background: $color-background-selected;
+    }
+    .icon-number {
+        position: absolute;
+        left: -1rem;
+        color: $color-white;
+        background: $color-primary;
+        font-size: 1.4rem;
+        border-radius: 50%;
+        padding: .4rem .3rem;
+        text-align: center;
+        min-width: 2.4rem;
+    }
+    .mobile-image {
+        //padding-left: 2rem;
+        font-size: 2.2rem;
+        color: $color-gray-light;
+        @include tablet {
+            padding-left: 4rem;
+        }
+        @include laptop {
+            padding-left: 6rem;
+            padding-right: 1rem;
+        }
+    }
+    .list-image {
+        font-size: 1.8rem;
+        color: $color-gray-light;
+        @include tablet {
+            padding-left: 4rem;
+        }
+        @include laptop {
+            padding-left: 6rem;
+            padding-right: 1rem;
+        }
+    }
+    .store-image {
+        font-size: 1.7rem;
+        color: $color-primary;
+        @include tablet {
+            padding-left: 4rem;
+        }
+        @include laptop {
+            padding-left: 6rem;
+            padding-right: 1rem;
+        }
+    }
+    p {
+        font-weight: bold;
+    }
+}
+
+.restaurants {
+    background: $color-backgound;
+    padding: 40px 20px;
+    @include tablet {
+        margin-top: 2rem;
+    }
+    h2 {
+        margin-bottom: 20px;
+        font-weight: bold;
+        @include tablet {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+    }
+}
+
+.restaurants__cards {
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2rem;
+        column-gap: 2rem;
+        justify-items: center;
+    }
+    @include large {
+        column-gap: 1rem;
+    }
+}
+
+.restaurant__card {
+    width: 100%;
+    &__body {
+        h3 {
+            font-weight: bold;
+        }
+    }
+    @include large {
+        max-width: 60rem;
+    }
+}
