@@ -23,26 +23,25 @@
         &__header img {
             margin-bottom: 3rem;
         }
-        @media screen and (min-width: $largest * 1px) {
-            @content;
-        }
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "header header header" "menu-entre menu-dishes menu-dessert" ". button .";
-        .main__header {
-            grid-area: header;
-        }
-        .menu:nth-child(2) {
-            grid-area: menu-entre;
-        }
-        .menu:nth-child(3) {
-            grid-area: menu-dishes;
-        }
-        .menu:nth-child(4) {
-            grid-area: menu-dessert;
-        }
-        .order-button {
-            grid-area: button;
+        @include largest {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "header header header" "menu-entre menu-dishes menu-dessert" ". button .";
+            .main__header {
+                grid-area: header;
+            }
+            .menu:nth-child(2) {
+                grid-area: menu-entre;
+            }
+            .menu:nth-child(3) {
+                grid-area: menu-dishes;
+            }
+            .menu:nth-child(4) {
+                grid-area: menu-dessert;
+            }
+            .order-button {
+                grid-area: button;
+            }
         }
     }
     
@@ -178,7 +177,7 @@
         p {
             overflow: hidden;
             white-space: nowrap;
-            text-overflow: $overflow;
+            text-overflow: ellipsis;
             width: 100%;
             transition: 0.5s ease-in-out;
         }
