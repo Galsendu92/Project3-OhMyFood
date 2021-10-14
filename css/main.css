@@ -694,7 +694,6 @@ img {
 .main__header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: relative;
     background-color: #F6F6F6;
     overflow: auto;
